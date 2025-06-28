@@ -10,13 +10,19 @@ window.onload = function () {
   let action = ['ate', 'peed', 'crushed', 'broke'];
   let what = ['my homework', 'my phone', 'the car'];
   let when = ['before the class', 'when I was sleeping', 'while I was exercising', 'during my luch', 'while I was praying'];
+  
+  function getRandomElement(array) {
+   return array[Math.floor(Math.random() * array.length)]
+  }
+
+  
 
   function generateExcuse() {
     let excuse =
-      `${who[Math.floor(Math.random() * who.length)]} ` +
-      `${action[Math.floor(Math.random() * action.length)]} ` +
-      `${what[Math.floor(Math.random() * what.length)]} ` +
-      `${when[Math.floor(Math.random() * when.length)]}. `;
+      `${getRandomElement(who)} ` +
+      `${getRandomElement(action)} ` +
+      `${getRandomElement(what)} ` +
+      `${getRandomElement(when)}. `;
     return excuse;
   }
  document.getElementById("excuse").innerHTML = generateExcuse();
